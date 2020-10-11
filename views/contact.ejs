@@ -1,0 +1,55 @@
+<%- include partials/header.ejs %>
+<%- include partials/main_nav.ejs %>
+
+  <main class="container">
+    <div class="jumbotron">
+      <h5>Contact me by: </h5>
+      <table border="1">
+        <tr>
+          <th>Email:</th>
+          <td>henrylovewatermelon@gmail.com</td>
+          <th>Phone:</th>
+          <td>henrylovewatermelon@gmail.com</td>
+        </tr>
+      </table>
+      <br>
+      <h5>Leava your message!</h5>
+      <form action="home">
+        <div class="form-group">
+          <label >First Name</label>
+          <input type="text" class="form-control" name="firstname" aria-describedby="emailHelp">
+          <label >Last Name</label>
+          <input type="text" class="form-control" name="lastname" aria-describedby="emailHelp">
+          <label >Phone number</label>
+          <input type="number" class="form-control" name="number" aria-describedby="emailHelp">
+          <label >Email address</label>
+          <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
+          <label >Message</label>
+          <input type="text" class="form-control" name="message" aria-describedby="emailHelp">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your information with anyone else.</small>
+        </div>
+        <button type="submit" class="btn btn-primary" onclick="save()">Submit</button>
+      </form>
+      <script>
+      function save()
+      {
+        let firstname = document.getElementsByTagName("input")[0].value;
+        let lastname = document.getElementsByTagName("input")[1].value;
+        let number = document.getElementsByTagName("input")[2].value;
+        let email = document.getElementsByTagName("input")[3].value;
+        let message = document.getElementsByTagName("input")[4].value; 
+        localStorage.firstname = firstname;
+        localStorage.lastname = lastname;
+        localStorage.number = number;
+        localStorage.email = email;
+        localStorage.message = message;
+        window.confirm("Your message has been saved!");
+      }
+       </script>
+    </div>
+  </main>
+
+  <!--Bottom nav-->
+ 
+<%- include partials/bottom_nav.ejs %>
+<%- include partials/footer.ejs %>
