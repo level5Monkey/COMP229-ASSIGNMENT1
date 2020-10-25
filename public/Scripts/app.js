@@ -1,1 +1,24 @@
-/*app.js; Jiaxing Li; 301135949; Oct 11, 2020*/
+/*app.js; Jiaxing Li; 301135949; Oct 25, 2020*/
+(function(){
+
+    function Start()
+    {
+        console.log("App Started...");
+
+        let deleteButtons = document.querySelectorAll('.btn-danger');
+        
+        for(button of deleteButtons)
+        {
+            button.addEventListener('click', (event)=>{
+                if(!confirm("Are you sure?")) 
+                {
+                    event.preventDefault();
+                    window.location.assign('/business-list');
+                }
+            });
+        }
+    }
+
+    window.addEventListener("load", Start);
+
+})();
