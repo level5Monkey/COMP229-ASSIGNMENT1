@@ -1,0 +1,9 @@
+mongo "mongodb+srv://mymongodb.iyfbd.mongodb.net/myMongoDB" --username jiaxing
+
+jiaxing
+ym9EI2W895W3GrID
+
+mongo "mongodb+srv://1027.ja9zx.mongodb.net/mean" --username jiaxing
+"name":"Jiaxing"
+"email":"test@test.com"
+"number":"123"
