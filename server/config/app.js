@@ -55,6 +55,7 @@ let mongoDB = mongoose.connection;
 mongoDB.on('error', console.error.bind(console, 'Connection Error'));
 mongoDB.once('open', ()=>{
   console.log('Connected to MongoDB');
+  console.log(DB);
 });
 
 

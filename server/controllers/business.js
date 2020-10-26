@@ -11,10 +11,14 @@ module.exports.displayBusinessList = (req, res, next) => {
     Business.find((err, business) => {
         if(err)
         {
+            console.log('displayBusinessList fail');
             return console.error(err);
         }
         else
         {
+            console.log('displayBusinessList success');
+            console.log(business);
+            console.log(Business);
             res.render('business/list', 
             {title: 'Business', 
             BusinessList: business, 
@@ -54,11 +58,15 @@ module.exports.processEditPage = (req, res, next) => {
     Business.updateOne({_id: id}, updatedBusiness, (err) => {
         if(err)
         {
+            console.log('fail');
             console.log(err);
             res.end(err);
         }
         else
         {
+            console.log(id);
+            console.log(updatedBusiness);
+            console.log('success');
             // refresh the business list
             res.redirect('/business-list');
         }

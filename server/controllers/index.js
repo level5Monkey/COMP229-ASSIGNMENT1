@@ -35,6 +35,7 @@ module.exports.displayLoginPage = (req, res, next) => {
     // check if the user is already logged in
     if(!req.user)
     {
+        console.log('login begin');
         res.render('auth/login', 
         {
            title: "Login",
@@ -54,11 +55,13 @@ module.exports.processLoginPage = (req, res, next) => {
         // server err?
         if(err)
         {
+            console.log('login fail');
             return next(err);
         }
         // is there a user login error?
         if(!user)
         {
+            console.log('login fail');
             req.flash('loginMessage', 'Authentication Error');
             return res.redirect('/login');
         }
@@ -66,6 +69,7 @@ module.exports.processLoginPage = (req, res, next) => {
             // server error?
             if(err)
             {
+                console.log('login fail');
                 return next(err);
             }
 
